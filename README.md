@@ -1,5 +1,7 @@
 # Jonathan Mendez · Data Analyst Portfolio
 
+Live site: https://data-analyst-portfolio-nine-theta.vercel.app
+
 Next.js + Tailwind CSS + shadcn/ui. Static single page, ready for Vercel.
 
 ## Edit your content
