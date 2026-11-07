@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jonathan Mendez · Data Analyst Portfolio
 
-## Getting Started
+Next.js + Tailwind CSS + shadcn/ui. Static single page, ready for Vercel.
 
-First, run the development server:
+## Edit your content
+
+Everything you'll want to change is in **`src/lib/content.ts`**: profile, about, skills, projects, experience, education.
+Search that file for `TODO` to find placeholders.
+
+- **Headshot:** put `headshot.jpg` in `/public`, then set `photo: "/headshot.jpg"`.
+- **Resume:** put `resume.pdf` in `/public` (the nav button already points there).
+- **Project screenshots:** put an image in `/public` and set `image: "/my-project.png"` on that project. Without one, a chart-style thumbnail is drawn. Wide images (about 2:1) fit best.
+- **Brand color:** change `--primary` in `src/app/globals.css`.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this folder to a new GitHub repo:
+   ```bash
+   git init && git add -A && git commit -m "Portfolio site"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/portfolio.git
+   git push -u origin main
+   ```
+2. Go to vercel.com/new, import the repo, and click **Deploy**. No settings needed; Vercel detects Next.js.
+3. Every push to `main` redeploys automatically.
 
-## Learn More
+Or skip GitHub: `npm i -g vercel` then run `vercel` in this folder.
 
-To learn more about Next.js, take a look at the following resources:
+## Adding more shadcn components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`components.json` is configured, so this works on your machine:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx shadcn@latest add dialog
+```
