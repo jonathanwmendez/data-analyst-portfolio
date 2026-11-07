@@ -44,3 +44,26 @@ Or skip GitHub: `npm i -g vercel` then run `vercel` in this folder.
 ```bash
 npx shadcn@latest add dialog
 ```
+
+## Visual editing with Retune
+
+[Retune](https://www.retune.dev) adds a visual editor on top of the site while it runs locally. It never loads on the live site.
+
+1. Run `npm install`, then `npm run dev` and open http://localhost:3000
+2. Press **Option+D** (Mac) or **Alt+D** (Windows) to toggle edit mode
+3. Click any element and adjust spacing, colors, text, or layout. Changes preview instantly.
+4. Send the changes to your AI agent to write them into the code:
+   - **Claude Code or Cursor:** run `npx retune setup` once. It connects Retune so the agent can read your edits directly.
+   - **Any other tool (including Claude chat):** use Retune's copy button and paste the diff into the chat.
+5. Commit and push. Vercel redeploys automatically.
+
+## Preview before going live
+
+Pushing to `main` updates the live site. To preview a change first, push it to a different branch:
+
+```bash
+git checkout -b my-edit
+git push -u origin my-edit
+```
+
+Vercel builds a private preview URL for that branch (shown in the Vercel dashboard and on GitHub). When it looks right, merge it into `main` to go live.
