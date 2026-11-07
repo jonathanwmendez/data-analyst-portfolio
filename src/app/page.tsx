@@ -6,9 +6,10 @@ import { ProjectThumb } from "@/components/project-thumb";
 import { SocialIcon } from "@/components/social-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-function Label({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-5 font-mono text-sm text-muted-foreground">{children}</h2>;
+function Label({ children, className }: { children: React.ReactNode; className?: string }) {
+  return <h2 className={cn("mb-5 font-mono text-sm text-muted-foreground", className)}>{children}</h2>;
 }
 
 // Blue-tinted pill for skills and project tools; gray variant for experience.
@@ -31,27 +32,27 @@ export default function Home() {
   return (
     <main className="mx-auto grid w-full max-w-[1440px] gap-10 lg:grid-cols-[380px_1fr] lg:gap-14 lg:pr-10">
       {/* Profile sidebar */}
-      <aside className="bg-muted px-6 py-10 sm:px-10 lg:sticky lg:top-0 lg:h-fit lg:rounded-br-3xl">
+      <aside className="bg-muted px-6 py-10 sm:px-10 lg:sticky lg:top-0 lg:h-svh lg:overflow-y-auto lg:py-8">
         {profile.photo ? (
           <Image
             src={profile.photo}
             alt={profile.name}
-            width={112}
-            height={112}
-            className="size-28 rounded-full object-cover"
+            width={80}
+            height={80}
+            className="size-20 rounded-full object-cover"
             priority
           />
         ) : (
-          <div className="grid size-28 place-items-center rounded-full bg-primary text-3xl font-semibold text-primary-foreground">
+          <div className="grid size-20 place-items-center rounded-full bg-primary text-2xl font-semibold text-primary-foreground">
             {profile.initials}
           </div>
         )}
 
-        <h1 className="mt-6 text-3xl font-semibold tracking-tight">{profile.name}</h1>
-        <p className="mt-2 text-lg">{profile.role}</p>
+        <h1 className="mt-5 text-2xl font-semibold tracking-tight">{profile.name}</h1>
+        <p className="mt-1">{profile.role}</p>
         <p className="mt-1 text-muted-foreground">{profile.location}</p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="mt-5 flex flex-wrap items-center gap-3">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -75,13 +76,13 @@ export default function Home() {
           </Button>
         </div>
 
-        <section className="mt-12">
-          <Label>About</Label>
-          <p className="text-lg leading-relaxed">{profile.about}</p>
+        <section className="mt-8">
+          <Label className="mb-3">About</Label>
+          <p className="leading-relaxed">{profile.about}</p>
         </section>
 
-        <section className="mt-12">
-          <Label>Skills</Label>
+        <section className="mt-8">
+          <Label className="mb-3">Skills</Label>
           <div className="flex flex-wrap gap-2">
             {skills.map((s) => (
               <Tag key={s}>{s}</Tag>
