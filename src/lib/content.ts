@@ -19,7 +19,7 @@ export const profile = {
 // Icons are matched by label: LinkedIn, GitHub, Tableau Public.
 export const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/TODO" },
-  { label: "GitHub", href: "https://github.com/TODO" },
+  { label: "GitHub", href: "https://github.com/jonathanwmendez" },
   { label: "Tableau Public", href: "https://public.tableau.com/app/profile/TODO" },
 ];
 
