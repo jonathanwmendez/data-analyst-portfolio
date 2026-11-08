@@ -8,8 +8,7 @@ export const profile = {
   initials: "JM",
   role: "Data Analyst",
   location: "Based in Philadelphia, PA",
-  // TODO: drop a headshot in /public (e.g. /headshot.jpg) and set the path here.
-  photo: "",
+  photo: "/headshot.jpg",
   resumeUrl: "/resume.pdf", // TODO: add resume.pdf to /public
   email: "jwmp001@gmail.com",
   about:

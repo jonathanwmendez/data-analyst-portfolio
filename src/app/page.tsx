@@ -37,9 +37,9 @@ export default function Home() {
           <Image
             src={profile.photo}
             alt={profile.name}
-            width={80}
-            height={80}
-            className="size-20 rounded-full object-cover"
+            width={96}
+            height={96}
+            className="size-24 rounded-full object-cover"
             priority
           />
         ) : (
