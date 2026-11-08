@@ -29,7 +29,9 @@ export const skills = [
   "NumPy",
   "Tableau",
   "Excel",
+  "Google Sheets",
   "Git",
+  "AI tools",
   "Data storytelling",
 ];
 
@@ -113,6 +115,16 @@ export const education = [
     title: "Google Data Analytics Professional Certificate",
     detail:
       "Data cleaning, analysis, and visualization with SQL, spreadsheets, Tableau, and R, finished with a capstone case study.",
+  },
+  {
+    year: "TODO: year",
+    title: "Google AI Essentials",
+    detail: "Using generative AI tools to speed up research, writing, and analysis work.",
+  },
+  {
+    year: "TODO: year",
+    title: "Databricks Lakehouse Fundamentals",
+    detail: "Core concepts of the Databricks Lakehouse platform for data engineering and analytics.",
   },
   {
     year: "TODO: year",

@@ -32,14 +32,14 @@ export default function Home() {
   return (
     <main className="mx-auto grid w-full max-w-[1440px] gap-10 lg:grid-cols-[380px_1fr] lg:gap-14 lg:pr-10">
       {/* Profile sidebar */}
-      <aside className="bg-muted px-6 py-10 sm:px-10 lg:sticky lg:top-0 lg:h-svh lg:overflow-y-auto lg:py-8">
+      <aside className="bg-muted px-6 py-10 sm:px-10 lg:sticky lg:top-0 lg:h-svh lg:overflow-y-auto lg:py-6">
         {profile.photo ? (
           <Image
             src={profile.photo}
             alt={profile.name}
-            width={96}
-            height={96}
-            className="size-24 rounded-full object-cover"
+            width={112}
+            height={112}
+            className="size-28 rounded-full object-cover"
             priority
           />
         ) : (
